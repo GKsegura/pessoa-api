@@ -1,6 +1,7 @@
 # 📚 Pessoa API - Spring Boot Project
 
-![Java CI](https://https://github.com/GKsegura/pessoa-api/actions/workflows/java.yml/badge.svg)
+![Java CI](https://github.com/GKsegura/pessoa-api/actions/workflows/java.yml/badge.svg)
+![Version](https://img.shields.io/badge/version-v1.0.0-BA55D3?style=for-the-badge)
 
 Este é um projeto de API RESTful desenvolvido com Spring Boot que permite o gerenciamento de pessoas, incluindo operações de criação, leitura, atualização e exclusão (CRUD).
 
@@ -38,7 +39,7 @@ Essa interface é gerada dinamicamente a partir do código, garantindo que a doc
 
 ```bash
 # Clone o repositório
-git clone https://github.com/josesegura/pessoa-api.git
+git clone https://github.com/GKsegura/pessoa-api.git
 cd pessoa-api
 
 # Rode a aplicação (via IDE ou terminal)
@@ -68,7 +69,7 @@ Este projeto possui integração contínua com GitHub Actions. A cada `push` no 
 
 ## 🧠 Autor
 
-Desenvolvido por José Segura 👨‍💻
+Desenvolvido por [José Segura 👨‍💻](https://gksegura.netlify.app)
 
 ## 🪪 Licença
 
