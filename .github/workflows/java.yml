@@ -1,0 +1,41 @@
+name: Java CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Verify and give execute permission for Maven Wrapper
+        run: |
+          if [ -f ./mvnw ]; then
+            chmod +x ./mvnw
+          else
+            echo "⚠️ Script mvnw não encontrado! Abortando o build."
+            exit 1
+          fi
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: temurin
+
+      - name: Cache Maven packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      - name: Build and Test with Maven using test profile
+        run: ./mvnw clean install -Dspring.profiles.active=test
